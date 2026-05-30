@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="8-Pack">
+<meta name="theme-color" content="#0a0f14">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="manifest" href="data:application/manifest+json;base64,eyJuYW1lIjogIjgtUGFjayBCYWxhdG9uIFByZXAiLCAic2hvcnRfbmFtZSI6ICI4LVBhY2siLCAiZGVzY3JpcHRpb24iOiAiQmFsYXRvbiBlZHpcdTAwZTlzdGVydiAyMDI2IiwgInN0YXJ0X3VybCI6ICIuIiwgImRpc3BsYXkiOiAic3RhbmRhbG9uZSIsICJiYWNrZ3JvdW5kX2NvbG9yIjogIiMwYTBmMTQiLCAidGhlbWVfY29sb3IiOiAiIzBhMGYxNCIsICJvcmllbnRhdGlvbiI6ICJwb3J0cmFpdC1wcmltYXJ5IiwgImljb25zIjogW3sic3JjIjogImRhdGE6aW1hZ2Uvc3ZnK3htbDtiYXNlNjQsUEhOMlp5QjRiV3h1Y3owaWFIUjBjRG92TDNkM2R5NTNNeTV2Y21jdk1qQXdNQzl6ZG1jaUlIZHBaSFJvUFNJMU1USWlJR2hsYVdkb2REMGlOVEV5SWlCMmFXVjNRbTk0UFNJd0lEQWdOVEV5SURVeE1pSStDaUFnUEhKbFkzUWdkMmxrZEdnOUlqVXhNaUlnYUdWcFoyaDBQU0kxTVRJaUlISjRQU0l4TURBaUlHWnBiR3c5SWlNd1lUQm1NVFFpTHo0S0lDQThjbVZqZENCM2FXUjBhRDBpTlRFeUlpQm9aV2xuYUhROUlqVXhNaUlnY25nOUlqRXdNQ0lnWm1sc2JEMGlkWEpzS0NOaVp5a2lMejRLSUNBOFpHVm1jejRLSUNBZ0lEeHNhVzVsWVhKSGNtRmthV1Z1ZENCcFpEMGlZbWNpSUhneFBTSXdKU0lnZVRFOUlqQWxJaUI0TWowaU1UQXdKU0lnZVRJOUlqRXdNQ1VpUGdvZ0lDQWdJQ0E4YzNSdmNDQnZabVp6WlhROUlqQWxJaUJ6ZEhsc1pUMGljM1J2Y0MxamIyeHZjam9qTUdReFlqSmhJaTgrQ2lBZ0lDQWdJRHh6ZEc5d0lHOW1abk5sZEQwaU1UQXdKU0lnYzNSNWJHVTlJbk4wYjNBdFkyOXNiM0k2SXpCaE1HWXhOQ0l2UGdvZ0lDQWdQQzlzYVc1bFlYSkhjbUZrYVdWdWRENEtJQ0FnSUR4c2FXNWxZWEpIY21Ga2FXVnVkQ0JwWkQwaVoyOXNaQ0lnZURFOUlqQWxJaUI1TVQwaU1DVWlJSGd5UFNJeE1EQWxJaUI1TWowaU1UQXdKU0krQ2lBZ0lDQWdJRHh6ZEc5d0lHOW1abk5sZEQwaU1DVWlJSE4wZVd4bFBTSnpkRzl3TFdOdmJHOXlPaU5tWm1abVptWWlMejRLSUNBZ0lDQWdQSE4wYjNBZ2IyWm1jMlYwUFNJeE1EQWxJaUJ6ZEhsc1pUMGljM1J2Y0MxamIyeHZjam9qWmpCak1EUXdJaTgrQ2lBZ0lDQThMMnhwYm1WaGNrZHlZV1JwWlc1MFBnb2dJRHd2WkdWbWN6NEtJQ0E4SVMwdElEZ2diblZ0WW1WeUlDMHRQZ29nSUR4MFpYaDBJSGc5SWpJMU5pSWdlVDBpTXpJd0lpQm1iMjUwTFdaaGJXbHNlVDBpUVhKcFlXd2dRbXhoWTJzc0lITmhibk10YzJWeWFXWWlJR1p2Ym5RdGMybDZaVDBpTXpJd0lpQm1iMjUwTFhkbGFXZG9kRDBpT1RBd0lpQjBaWGgwTFdGdVkyaHZjajBpYldsa1pHeGxJaUJtYVd4c1BTSjFjbXdvSTJkdmJHUXBJajQ0UEM5MFpYaDBQZ29nSUR3aExTMGdiR2xuYUhSdWFXNW5JR0p2YkhRZ2IzWmxjbXhoZVNBdExUNEtJQ0E4Y0c5c2VXZHZiaUJ3YjJsdWRITTlJak13TUN3NE1DQXlOREFzTWpZd0lESTRNQ3d5TmpBZ01qRXlMRFF6TUNBek5EQXNNakl3SURJNU5Td3lNakFnTXpZd0xEZ3dJaUJtYVd4c1BTSWpaakJqTURRd0lpQnZjR0ZqYVhSNVBTSXdMakUxSWk4K0Nqd3ZjM1puUGc9PSIsICJzaXplcyI6ICI1MTJ4NTEyIiwgInR5cGUiOiAiaW1hZ2Uvc3ZnK3htbCIsICJwdXJwb3NlIjogImFueSBtYXNrYWJsZSJ9XX0=">
+<link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+CiAgPHJlY3Qgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHJ4PSIxMDAiIGZpbGw9IiMwYTBmMTQiLz4KICA8cmVjdCB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgcng9IjEwMCIgZmlsbD0idXJsKCNiZykiLz4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iYmciIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMGQxYjJhIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6IzBhMGYxNCIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZ29sZCIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiNmZmZmZmYiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdHlsZT0ic3RvcC1jb2xvcjojZjBjMDQwIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KICA8IS0tIDggbnVtYmVyIC0tPgogIDx0ZXh0IHg9IjI1NiIgeT0iMzIwIiBmb250LWZhbWlseT0iQXJpYWwgQmxhY2ssIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzIwIiBmb250LXdlaWdodD0iOTAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ1cmwoI2dvbGQpIj44PC90ZXh0PgogIDwhLS0gbGlnaHRuaW5nIGJvbHQgb3ZlcmxheSAtLT4KICA8cG9seWdvbiBwb2ludHM9IjMwMCw4MCAyNDAsMjYwIDI4MCwyNjAgMjEyLDQzMCAzNDAsMjIwIDI5NSwyMjAgMzYwLDgwIiBmaWxsPSIjZjBjMDQwIiBvcGFjaXR5PSIwLjE1Ii8+Cjwvc3ZnPg==">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+CiAgPHJlY3Qgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHJ4PSIxMDAiIGZpbGw9IiMwYTBmMTQiLz4KICA8cmVjdCB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgcng9IjEwMCIgZmlsbD0idXJsKCNiZykiLz4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iYmciIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMGQxYjJhIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6IzBhMGYxNCIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZ29sZCIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiNmZmZmZmYiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdHlsZT0ic3RvcC1jb2xvcjojZjBjMDQwIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KICA8IS0tIDggbnVtYmVyIC0tPgogIDx0ZXh0IHg9IjI1NiIgeT0iMzIwIiBmb250LWZhbWlseT0iQXJpYWwgQmxhY2ssIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzIwIiBmb250LXdlaWdodD0iOTAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ1cmwoI2dvbGQpIj44PC90ZXh0PgogIDwhLS0gbGlnaHRuaW5nIGJvbHQgb3ZlcmxheSAtLT4KICA8cG9seWdvbiBwb2ludHM9IjMwMCw4MCAyNDAsMjYwIDI4MCwyNjAgMjEyLDQzMCAzNDAsMjIwIDI5NSwyMjAgMzYwLDgwIiBmaWxsPSIjZjBjMDQwIiBvcGFjaXR5PSIwLjE1Ii8+Cjwvc3ZnPg==">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>8-Pack Prep</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+:root{
+  --bg:#0a0f14;--bg2:#111820;--bg3:#1a2535;--card:#151e2b;
+  --blue:#2e86c1;--green:#27ae60;--orange:#e67e22;--gold:#f0c040;--red:#c0392b;
+  --gray:#5a7a99;--light:#cdd6e0;--white:#f0f4f8;
+  --push:#1a3a5c;--pull:#1a3d2a;--rest:#2d1a00;--finish:#1f3a1f;
+}
+html,body{background:var(--bg);color:var(--white);font-family:'DM Sans',sans-serif;min-height:100vh;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+
+/* TOPBAR */
+.topbar{background:linear-gradient(180deg,#060b10 0%,var(--bg) 100%);padding:50px 18px 14px;border-bottom:1px solid rgba(255,255,255,0.06)}
+.topbar-row{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:12px}
+.brand{font-family:'Bebas Neue',sans-serif;font-size:2.2rem;letter-spacing:4px;background:linear-gradient(135deg,#fff 0%,var(--gold) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.countdown-box{text-align:right}
+.countdown-num{font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--gold);line-height:1}
+.countdown-lbl{font-size:0.65rem;color:var(--gray);text-transform:uppercase;letter-spacing:1.5px}
+.prog-wrap{margin-top:2px}
+.prog-track{height:4px;background:rgba(255,255,255,0.08);border-radius:99px;overflow:hidden}
+.prog-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--blue),var(--gold));transition:width 0.6s ease}
+.prog-meta{display:flex;justify-content:space-between;margin-top:5px;font-size:0.68rem;color:var(--gray)}
+
+/* NAV */
+.nav{display:flex;background:#060b10;border-bottom:1px solid rgba(255,255,255,0.06);position:sticky;top:0;z-index:100}
+.nav-btn{flex:1;padding:12px 4px 10px;background:none;border:none;color:var(--gray);font-family:'DM Sans',sans-serif;font-size:0.68rem;font-weight:600;letter-spacing:0.5px;cursor:pointer;text-align:center;border-bottom:2px solid transparent;transition:all 0.2s}
+.nav-btn svg{display:block;margin:0 auto 3px;width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8}
+.nav-btn.active{color:var(--gold);border-bottom-color:var(--gold)}
+
+/* SCREENS */
+.screen{display:none;padding:14px 14px 90px;animation:fadeUp 0.2s ease}
+.screen.active{display:block}
+@keyframes fadeUp{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+
+/* STATS ROW */
+.stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px}
+.stat-box{background:var(--card);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:10px 8px;text-align:center}
+.stat-num{font-family:'Bebas Neue',sans-serif;font-size:1.7rem;line-height:1}
+.stat-lbl{font-size:0.62rem;color:var(--gray);text-transform:uppercase;letter-spacing:1px;margin-top:2px}
+.stat-num.gold{color:var(--gold)}
+.stat-num.green{color:var(--green)}
+.stat-num.blue{color:var(--blue)}
+
+/* HERO */
+.hero{border-radius:16px;padding:18px 16px;margin-bottom:14px;position:relative;overflow:hidden}
+.hero.push{background:linear-gradient(135deg,var(--push),#0a1e36);border:1px solid rgba(46,134,193,0.25)}
+.hero.pull{background:linear-gradient(135deg,var(--pull),#0a1e12);border:1px solid rgba(39,174,96,0.25)}
+.hero.rest{background:linear-gradient(135deg,var(--rest),#1a0d00);border:1px solid rgba(230,126,34,0.25)}
+.hero.finish{background:linear-gradient(135deg,var(--finish),#0a140a);border:1px solid rgba(240,192,64,0.4)}
+.hero.future{background:var(--bg3);border:1px solid rgba(255,255,255,0.08)}
+.hero-tag{font-size:0.65rem;text-transform:uppercase;letter-spacing:2px;opacity:0.6;margin-bottom:4px}
+.hero-title{font-family:'Bebas Neue',sans-serif;font-size:2.2rem;letter-spacing:2px;line-height:1}
+.hero.push .hero-title{color:#5dade2}
+.hero.pull .hero-title{color:#58d68d}
+.hero.rest .hero-title{color:#f0a500}
+.hero.finish .hero-title{color:var(--gold)}
+.hero.future .hero-title{color:var(--gray)}
+.hero-sub{font-size:0.78rem;color:var(--gray);margin-top:3px}
+.hero-pill{position:absolute;right:14px;top:14px;font-size:0.65rem;font-weight:700;padding:4px 10px;border-radius:99px;text-transform:uppercase;letter-spacing:0.5px}
+.pill-push{background:rgba(46,134,193,0.2);color:#5dade2;border:1px solid rgba(46,134,193,0.3)}
+.pill-pull{background:rgba(39,174,96,0.2);color:#58d68d;border:1px solid rgba(39,174,96,0.3)}
+.pill-rest{background:rgba(230,126,34,0.2);color:#f0a500;border:1px solid rgba(230,126,34,0.3)}
+.pill-finish{background:rgba(240,192,64,0.2);color:var(--gold);border:1px solid rgba(240,192,64,0.3)}
+
+/* SECTION TITLE */
+.sec-title{font-size:0.65rem;text-transform:uppercase;letter-spacing:2px;color:var(--gray);margin:16px 0 8px;display:flex;align-items:center;gap:8px}
+.sec-title::after{content:'';flex:1;height:1px;background:rgba(255,255,255,0.06)}
+
+/* EXERCISE CARD */
+.ex-card{background:var(--card);border:1px solid rgba(255,255,255,0.07);border-radius:14px;margin-bottom:8px;overflow:hidden;transition:all 0.2s;cursor:pointer;-webkit-user-select:none;user-select:none}
+.ex-card:active{transform:scale(0.98)}
+.ex-card.done{border-color:rgba(39,174,96,0.3);background:rgba(39,174,96,0.08)}
+.ex-card-inner{display:flex;align-items:center;gap:12px;padding:13px 14px}
+.check{width:26px;height:26px;border-radius:50%;border:2px solid rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all 0.25s;font-size:0.8rem}
+.ex-card.done .check{background:var(--green);border-color:var(--green);color:#fff}
+.ex-body{flex:1;min-width:0}
+.ex-name{font-size:0.92rem;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ex-card.done .ex-name{opacity:0.5;text-decoration:line-through}
+.ex-meta{font-size:0.72rem;color:var(--gray);margin-top:1px}
+.ex-tip{font-size:0.68rem;color:#5dade2;margin-top:2px;font-style:italic}
+.timer-btn{flex-shrink:0;background:rgba(240,192,64,0.1);border:1px solid rgba(240,192,64,0.25);color:var(--gold);border-radius:8px;padding:6px 10px;font-size:0.7rem;font-weight:700;cursor:pointer;white-space:nowrap;font-family:'DM Sans',sans-serif;transition:all 0.2s}
+.timer-btn:active{transform:scale(0.95);background:rgba(240,192,64,0.2)}
+
+/* DONE BANNER */
+.done-banner{background:linear-gradient(135deg,rgba(39,174,96,0.15),rgba(30,132,73,0.08));border:1px solid rgba(39,174,96,0.35);border-radius:14px;padding:20px;text-align:center;margin-top:8px}
+.done-banner-big{font-family:'Bebas Neue',sans-serif;font-size:1.9rem;color:#58d68d;letter-spacing:2px}
+.done-banner-sub{font-size:0.78rem;color:var(--gray);margin-top:4px}
+.beast-btn{width:100%;padding:14px;border-radius:14px;border:none;background:linear-gradient(135deg,#1e8449,#145a32);color:white;font-family:'DM Sans',sans-serif;font-size:1rem;font-weight:700;cursor:pointer;margin-top:14px;letter-spacing:0.5px;transition:all 0.2s}
+.beast-btn:active{transform:scale(0.97)}
+
+/* REST DAY */
+.rest-day-card{background:linear-gradient(135deg,var(--rest),#180d00);border:1px solid rgba(230,126,34,0.3);border-radius:16px;padding:20px}
+.rest-day-card h2{font-family:'Bebas Neue',sans-serif;font-size:1.7rem;color:#f0a500;letter-spacing:2px}
+.rest-day-card p{font-size:0.82rem;color:var(--gray);margin-top:6px;line-height:1.5}
+.rest-task{display:flex;align-items:center;gap:12px;padding:11px 0;border-top:1px solid rgba(255,255,255,0.06);cursor:pointer;-webkit-user-select:none;user-select:none}
+.rest-task:active{opacity:0.7}
+.rest-icon{font-size:1.1rem;width:24px;text-align:center;flex-shrink:0}
+.rest-task-name{font-size:0.88rem}
+
+/* CALENDAR */
+.cal-item{background:var(--card);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:11px 14px;margin-bottom:7px;display:flex;align-items:center;gap:12px}
+.cal-item.today-cal{border-color:var(--gold);box-shadow:0 0 0 1px rgba(240,192,64,0.3)}
+.cal-item.past-miss{opacity:0.45}
+.cal-date{width:38px;flex-shrink:0;text-align:center}
+.cal-day-num{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;line-height:1;color:var(--white)}
+.cal-month{font-size:0.6rem;color:var(--gray);text-transform:uppercase;letter-spacing:1px}
+.cal-div{width:1px;height:32px;background:rgba(255,255,255,0.07);flex-shrink:0}
+.cal-info{flex:1}
+.cal-type{font-size:0.85rem;font-weight:600}
+.cal-sub{font-size:0.68rem;color:var(--gray);margin-top:1px}
+.cal-indicator{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.ind-done{background:#27ae60}
+.ind-today{background:var(--gold)}
+.ind-upcoming{background:rgba(255,255,255,0.15)}
+.ind-missed{background:var(--red)}
+.ind-rest{background:var(--orange)}
+.ind-finish{background:var(--gold)}
+
+/* EXERCISES REF */
+.exref-section{margin-bottom:20px}
+.exref-header{padding:12px 14px;font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:2px;border-radius:12px 12px 0 0}
+.exref-header.push{background:var(--push);color:#5dade2;border-bottom:2px solid var(--blue)}
+.exref-header.pull{background:var(--pull);color:#58d68d;border-bottom:2px solid var(--green)}
+.exref-header.rest-h{background:var(--rest);color:#f0a500;border-bottom:2px solid var(--orange)}
+.exref-header.finish-h{background:var(--finish);color:var(--gold);border-bottom:2px solid var(--gold)}
+.exref-row{background:var(--card);border:1px solid rgba(255,255,255,0.07);border-top:none;padding:11px 14px;display:flex;gap:10px}
+.exref-row:last-child{border-radius:0 0 12px 12px}
+.exref-num{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;color:var(--gray);width:18px;flex-shrink:0;margin-top:1px}
+.exref-body .rname{font-size:0.88rem;font-weight:600}
+.exref-body .rtarget{font-size:0.68rem;color:var(--gray);margin-top:1px}
+.exref-body .rsets{font-size:0.72rem;color:var(--gold);font-weight:600;margin-top:2px}
+.exref-body .rtip{font-size:0.68rem;color:#5dade2;font-style:italic;margin-top:2px}
+
+/* REST TIMER OVERLAY */
+.timer-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.88);z-index:500;display:none;flex-direction:column;align-items:center;justify-content:center;padding:20px}
+.timer-overlay.show{display:flex;animation:fadeUp 0.2s ease}
+.timer-title{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:2px;color:var(--gray);margin-bottom:20px;text-transform:uppercase}
+.timer-ring-wrap{position:relative;width:200px;height:200px;margin-bottom:24px}
+.timer-ring-wrap svg{transform:rotate(-90deg)}
+.timer-bg-circle{fill:none;stroke:rgba(255,255,255,0.08);stroke-width:10}
+.timer-fg-circle{fill:none;stroke:var(--gold);stroke-width:10;stroke-linecap:round;transition:stroke-dashoffset 1s linear,stroke 0.3s;stroke-dasharray:565.5}
+.timer-center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.timer-secs{font-family:'Bebas Neue',sans-serif;font-size:3.5rem;color:var(--white);letter-spacing:2px;line-height:1}
+.timer-label{font-size:0.68rem;color:var(--gray);letter-spacing:1.5px;text-transform:uppercase;margin-top:2px}
+.timer-presets{display:flex;gap:10px;margin-bottom:20px}
+.preset-btn{background:var(--card);border:1px solid rgba(255,255,255,0.12);color:var(--light);border-radius:10px;padding:9px 18px;font-family:'DM Sans',sans-serif;font-size:0.85rem;font-weight:600;cursor:pointer;transition:all 0.2s}
+.preset-btn.active-preset{background:rgba(240,192,64,0.15);border-color:var(--gold);color:var(--gold)}
+.preset-btn:active{transform:scale(0.95)}
+.timer-actions{display:flex;gap:10px}
+.timer-act-btn{border-radius:12px;padding:13px 28px;font-family:'DM Sans',sans-serif;font-size:0.9rem;font-weight:700;cursor:pointer;border:none;transition:all 0.2s;letter-spacing:0.3px}
+.timer-act-btn:active{transform:scale(0.96)}
+.btn-skip{background:rgba(255,255,255,0.1);color:var(--light)}
+.btn-close{background:rgba(192,57,43,0.2);color:#e74c3c;border:1px solid rgba(192,57,43,0.3)}
+.timer-done-flash{position:absolute;inset:0;background:rgba(39,174,96,0.15);border-radius:50%;animation:ring-flash 0.5s ease both}
+@keyframes ring-flash{0%{transform:scale(0.8);opacity:0}50%{opacity:1}100%{transform:scale(1.2);opacity:0}}
+
+/* TOAST */
+.toast{position:fixed;bottom:85px;left:50%;transform:translateX(-50%) translateY(10px);background:var(--green);color:#fff;padding:9px 20px;border-radius:99px;font-size:0.82rem;font-weight:600;opacity:0;transition:all 0.25s;z-index:999;pointer-events:none;white-space:nowrap}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.toast.gold{background:#b8860b}
+
+/* BOTTOM NAV */
+.bottom-nav{position:fixed;bottom:0;left:0;right:0;background:#060b10;border-top:1px solid rgba(255,255,255,0.07);display:flex;padding-bottom:env(safe-area-inset-bottom);z-index:200}
+.bot-btn{flex:1;padding:11px 4px 9px;background:none;border:none;color:var(--gray);font-family:'DM Sans',sans-serif;font-size:0.67rem;font-weight:600;cursor:pointer;transition:all 0.2s;text-align:center;border-top:2px solid transparent}
+.bot-btn svg{display:block;margin:0 auto 3px;width:21px;height:21px;stroke:currentColor;fill:none;stroke-width:1.8}
+.bot-btn.active{color:var(--gold);border-top-color:var(--gold)}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-row">
+    <div><div class="brand">8-PACK</div><div style="font-size:0.62rem;color:var(--gray);letter-spacing:2px;text-transform:uppercase">Balaton Prep 2026</div></div>
+    <div class="countdown-box">
+      <div class="countdown-num" id="cdn">–</div>
+      <div class="countdown-lbl">Balatonig 🏖️</div>
+    </div>
+  </div>
+  <div class="prog-wrap">
+    <div class="prog-track"><div class="prog-fill" id="pf" style="width:0%"></div></div>
+    <div class="prog-meta"><span id="pm-done">0 / 19 nap</span><span id="pm-pct">0%</span></div>
+  </div>
+</div>
+
+<div class="nav">
+  <button class="nav-btn active" id="nav-today" onclick="showScreen('today')">
+    <svg viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>Ma
+  </button>
+  <button class="nav-btn" id="nav-calendar" onclick="showScreen('calendar')">
+    <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Naptár
+  </button>
+  <button class="nav-btn" id="nav-exercises" onclick="showScreen('exercises')">
+    <svg viewBox="0 0 24 24"><path d="M6 4v6a6 6 0 0 0 12 0V4M6 20h12"/></svg>Edzés
+  </button>
+</div>
+
+<div class="screen active" id="screen-today"><div id="today-content"></div></div>
+<div class="screen" id="screen-calendar"><div id="cal-content"></div></div>
+<div class="screen" id="screen-exercises"><div id="ex-content"></div></div>
+
+<!-- REST TIMER OVERLAY -->
+<div class="timer-overlay" id="timer-overlay">
+  <div class="timer-title" id="timer-ex-name">Pihenő</div>
+  <div class="timer-ring-wrap">
+    <svg width="200" height="200" viewBox="0 0 200 200">
+      <circle class="timer-bg-circle" cx="100" cy="100" r="90"/>
+      <circle class="timer-fg-circle" id="timer-ring" cx="100" cy="100" r="90"/>
+    </svg>
+    <div class="timer-center">
+      <div class="timer-secs" id="timer-display">60</div>
+      <div class="timer-label">másodperc</div>
+    </div>
+  </div>
+  <div class="timer-presets">
+    <button class="preset-btn" onclick="setTimer(30)">30s</button>
+    <button class="preset-btn active-preset" onclick="setTimer(60)">60s</button>
+    <button class="preset-btn" onclick="setTimer(90)">90s</button>
+    <button class="preset-btn" onclick="setTimer(120)">2 perc</button>
+  </div>
+  <div class="timer-actions">
+    <button class="timer-act-btn btn-skip" onclick="skipTimer()">⏭ Skip</button>
+    <button class="timer-act-btn btn-close" onclick="closeTimer()">✕ Bezár</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<div class="bottom-nav">
+  <button class="bot-btn active" id="bot-today" onclick="showScreen('today')">
+    <svg viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>Ma
+  </button>
+  <button class="bot-btn" id="bot-calendar" onclick="showScreen('calendar')">
+    <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Naptár
+  </button>
+  <button class="bot-btn" id="bot-exercises" onclick="showScreen('exercises')">
+    <svg viewBox="0 0 24 24"><path d="M6 4v6a6 6 0 0 0 12 0V4M6 20h12"/></svg>Edzés
+  </button>
+</div>
+
+<script>
+// ===== DATA =====
+const SCHED=[
+  {d:'2026-05-30',t:'push',l:'PUSH NAP',s:'Váll · Tricepsz · Mell'},
+  {d:'2026-05-31',t:'pull',l:'PULL NAP',s:'Bicepsz · Hát · Alkar'},
+  {d:'2026-06-01',t:'push',l:'PUSH NAP',s:'Váll · Tricepsz · Mell'},
+  {d:'2026-06-02',t:'pull',l:'PULL NAP',s:'Bicepsz · Hát · Alkar'},
+  {d:'2026-06-03',t:'push',l:'PUSH NAP',s:'Váll · Tricepsz · Mell'},
+  {d:'2026-06-04',t:'pull',l:'PULL NAP',s:'Bicepsz · Hát · Alkar'},
+  {d:'2026-06-05',t:'rest',l:'PIHENŐNAP',s:'Aktív pihenő · Izomszintézis'},
+  {d:'2026-06-06',t:'push',l:'PUSH NAP',s:'Váll · Tricepsz · Mell'},
+  {d:'2026-06-07',t:'pull',l:'PULL NAP',s:'Bicepsz · Hát · Alkar'},
+  {d:'2026-06-08',t:'push',l:'PUSH NAP',s:'Váll · Tricepsz · Mell'},
+  {d:'2026-06-09',t:'pull',l:'PULL NAP',s:'Bicepsz · Hát · Alkar'},
+  {d:'2026-06-10',t:'push',l:'PUSH NAP',s:'Váll · Tricepsz · Mell'},
+  {d:'2026-06-11',t:'pull',l:'PULL NAP',s:'Bicepsz · Hát · Alkar'},
+  {d:'2026-06-12',t:'rest',l:'PIHENŐNAP',s:'Aktív pihenő · Izomszintézis'},
+  {d:'2026-06-13',t:'push',l:'PUSH NAP',s:'Váll · Tricepsz · Mell'},
+  {d:'2026-06-14',t:'pull',l:'FINISH 🎯',s:'PULL + Sómentes nap kezd!'},
+  {d:'2026-06-15',t:'finish',l:'FINISH 🎯',s:'PUSH + Sómentes · Bedurranás!'},
+  {d:'2026-06-16',t:'finish',l:'FINISH 🎯',s:'PULL + Sómentes · Mutasd!'},
+  {d:'2026-06-17',t:'finish',l:'BALATON NAP 🏖️',s:'PUSH · Sómentes · Ma megy!'},
+];
+
+const PUSH=[
+  {id:'p0',n:'Stomach Vacuum',d:'4 sor × 20 mp tartás',t:'Mély hasizom',tip:'Éhgyomorra ébredés után!',rest:30},
+  {id:'p1',n:'Vállból nyomás állva',d:'4 sor × 10–12 ism',t:'Első & Középső váll',tip:'Növeld a súlyt hetente 0.5kg!',rest:90},
+  {id:'p2',n:'Oldalemelés állva',d:'4 sor × 15–20 ism',t:'Oldalsó váll – szélesítés',tip:'Lassú negatív 3mp le',rest:60},
+  {id:'p3',n:'Tricepsz nyújtás fejfölött',d:'4 sor × 12–15 ism',t:'Tricepsz hosszú fej',tip:'Teljes mozgástartomány!',rest:60},
+  {id:'p4',n:'Szűk fekvőtámasz',d:'3 sor × Maximum',t:'Mell + Tricepsz burnout',tip:'Bukásig minden sor',rest:90},
+  {id:'c0',n:'Fekvő lábemelés bokasúllyal',d:'3 kör × 12–15 ism',t:'Alsó 8-pack blokkok',rest:45},
+  {id:'c1',n:'Súlyzós felülés',d:'3 kör × 12–15 ism',t:'Felső 8-pack blokkok',rest:45},
+  {id:'c2',n:'Súlyzós orosz csavarás',d:'3 kör × 20 fordítás (lassan)',t:'Oldalsó hasizmok',rest:45},
+  {id:'c3',n:'RKC Plánk',d:'3 kör × 45 mp tartás',t:'Mély core izmok',rest:30},
+  {id:'c4',n:'V-Up',d:'3 kör × 15 ism',t:'Teljes hasizom burnout',rest:45},
+];
+
+const PULL=[
+  {id:'r0',n:'Stomach Vacuum',d:'4 sor × 20 mp tartás',t:'Mély hasizom',tip:'Éhgyomorra ébredés után!',rest:30},
+  {id:'r1',n:'Bicepsz kalapács hajlítás',d:'4 sor × 12 ism',t:'Bicepsz & Alkar',tip:'Lassú negatív – 3mp le!',rest:60},
+  {id:'r2',n:'Koncentrált hajlítás',d:'3 sor × 10–12 ism',t:'Bicepsz csúcs',tip:'Könyök rögzítve',rest:60},
+  {id:'r3',n:'Evezés hajolva / Húzódzkodás',d:'4 sor × 8–12 ism',t:'Hát szélesség – V-alak',tip:'Ha nincs rúd: póló ajtón!',rest:90},
+  {id:'r4',n:'Alkar hajlítás reverz',d:'3 sor × 15 ism',t:'Alkar teteje',tip:'Tenyér lefelé néz',rest:60},
+  {id:'c0',n:'Fekvő lábemelés bokasúllyal',d:'3 kör × 12–15 ism',t:'Alsó 8-pack blokkok',rest:45},
+  {id:'c1',n:'Súlyzós felülés',d:'3 kör × 12–15 ism',t:'Felső 8-pack blokkok',rest:45},
+  {id:'c2',n:'Súlyzós orosz csavarás',d:'3 kör × 20 fordítás (lassan)',t:'Oldalsó hasizmok',rest:45},
+  {id:'c3',n:'RKC Plánk',d:'3 kör × 45 mp tartás',t:'Mély core izmok',rest:30},
+  {id:'c4',n:'V-Up',d:'3 kör × 15 ism',t:'Teljes hasizom burnout',rest:45},
+];
+
+const REST_TASKS=[
+  {id:'rt0',n:'Stomach Vacuum reggel',icon:'🫁'},
+  {id:'rt1',n:'20–30 perc séta',icon:'🚶'},
+  {id:'rt2',n:'Nyújtás 10+ perc',icon:'🧘'},
+  {id:'rt3',n:'3–4 liter víz',icon:'💧'},
+  {id:'rt4',n:'Fehérje: 130g+ ma is!',icon:'🥩'},
+];
+
+const HU_DAYS=['Vasárnap','Hétfő','Kedd','Szerda','Csütörtök','Péntek','Szombat'];
+const HU_M=['jan','feb','már','ápr','máj','jún','júl','aug','szep','okt','nov','dec'];
+
+// ===== STORAGE (persistent - túléli a cache törlést) =====
+// Elsődleges: window.storage (Claude persistent storage)
+// Tartalék: localStorage
+
+async function saveDay(dateKey, data) {
+  const json = JSON.stringify(data);
+  // Try persistent storage first
+  if (window.storage) {
+    try { await window.storage.set('8pack:' + dateKey, json); return; } catch(e){}
+  }
+  try { localStorage.setItem('8pack:' + dateKey, json); } catch(e){}
+}
+
+async function loadDay(dateKey) {
+  if (window.storage) {
+    try {
+      const r = await window.storage.get('8pack:' + dateKey);
+      if (r && r.value) return JSON.parse(r.value);
+    } catch(e){}
+  }
+  try {
+    const v = localStorage.getItem('8pack:' + dateKey);
+    if (v) return JSON.parse(v);
+  } catch(e){}
+  return {};
+}
+
+async function loadAllDays() {
+  const out = {};
+  for (const s of SCHED) {
+    out[s.d] = await loadDay(s.d);
+  }
+  return out;
+}
+
+// State cache
+let STATE = {};
+
+async function initState() {
+  STATE = await loadAllDays();
+  renderAll();
+}
+
+async function toggle(dateKey, exId) {
+  if (!STATE[dateKey]) STATE[dateKey] = {};
+  STATE[dateKey][exId] = !STATE[dateKey][exId];
+  await saveDay(dateKey, STATE[dateKey]);
+  renderAll();
+  if (STATE[dateKey][exId]) showToast('✓  Kész!');
+}
+
+async function markAll(dateKey, exercises) {
+  if (!STATE[dateKey]) STATE[dateKey] = {};
+  exercises.forEach(e => STATE[dateKey][e.id] = true);
+  await saveDay(dateKey, STATE[dateKey]);
+  renderAll();
+  showToast('🔥  Beast mode! Minden kész!', true);
+}
+
+// ===== HELPERS =====
+function todayKey() {
+  const d = new Date();
+  return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+}
+
+function getExs(type) {
+  if (type==='push'||type==='finish') return PUSH;
+  if (type==='pull') return PULL;
+  return [];
+}
+
+function isDayDone(sched) {
+  const s = STATE[sched.d] || {};
+  if (sched.t === 'rest') return Object.values(s).some(v=>v);
+  const exs = getExs(sched.t);
+  return exs.length > 0 && exs.every(e => s[e.id]);
+}
+
+function countDone() { return SCHED.filter(s => isDayDone(s)).length; }
+
+function calcStreak() {
+  const tk = todayKey();
+  let streak = 0;
+  const todayIdx = SCHED.findIndex(s => s.d === tk);
+  const upTo = todayIdx >= 0 ? todayIdx : SCHED.length - 1;
+  for (let i = upTo; i >= 0; i--) {
+    if (isDayDone(SCHED[i])) streak++;
+    else break;
+  }
+  return streak;
+}
+
+// ===== RENDER =====
+function renderAll() {
+  renderHeader();
+  renderToday();
+  renderCalendar();
+  renderExercises();
+}
+
+function renderHeader() {
+  const today = new Date(); today.setHours(0,0,0,0);
+  const balaton = new Date('2026-06-17'); balaton.setHours(0,0,0,0);
+  const diff = Math.ceil((balaton - today) / 86400000);
+  document.getElementById('cdn').textContent = diff > 0 ? diff + ' nap' : diff === 0 ? 'MA! 🏖️' : 'Vége!';
+  const done = countDone();
+  const pct = Math.round(done/19*100);
+  document.getElementById('pf').style.width = pct + '%';
+  document.getElementById('pm-done').textContent = done + ' / 19 nap teljesítve';
+  document.getElementById('pm-pct').textContent = pct + '%';
+}
+
+function renderToday() {
+  const el = document.getElementById('today-content');
+  const tk = todayKey();
+  const today = new Date(); today.setHours(0,0,0,0);
+  const start = new Date('2026-05-30'); start.setHours(0,0,0,0);
+  const end = new Date('2026-06-17'); end.setHours(0,0,0,0);
+  const sched = SCHED.find(s => s.d === tk);
+  const s = STATE[tk] || {};
+  const done = countDone();
+  const streak = calcStreak();
+
+  let html = `<div class="stats-row">
+    <div class="stat-box"><div class="stat-num gold">${done}</div><div class="stat-lbl">Nap kész</div></div>
+    <div class="stat-box"><div class="stat-num green">${streak}🔥</div><div class="stat-lbl">Sorozat</div></div>
+    <div class="stat-box"><div class="stat-num blue">${19-done}</div><div class="stat-lbl">Van még</div></div>
+  </div>`;
+
+  if (!sched) {
+    if (today < start) {
+      html += `<div class="hero future"><div class="hero-tag">Program indul</div><div class="hero-title" style="color:var(--gray)">2026 MÁJ 30</div><div class="hero-sub">Pihenj, egyél sokat, és készülj! 💪</div></div>`;
+    } else {
+      html += `<div class="hero finish"><div class="hero-tag">Program lezárva</div><div class="hero-title">BALATON! 🏖️</div><div class="hero-sub">Mutasd meg azt a testet!</div></div>`;
+    }
+    el.innerHTML = html;
+    return;
+  }
+
+  const heroType = sched.t === 'finish' ? 'finish' : sched.t;
+  const pillMap = {push:'pill-push',pull:'pill-pull',rest:'pill-rest',finish:'pill-finish'};
+  const dayName = HU_DAYS[new Date().getDay()];
+  const dayNum = new Date().getDate();
+
+  html += `<div class="hero ${heroType}">
+    <div class="hero-pill ${pillMap[heroType] || 'pill-push'}">${sched.t.toUpperCase()}</div>
+    <div class="hero-tag">${dayName} · ${HU_M[new Date().getMonth()]} ${dayNum}.</div>
+    <div class="hero-title">${sched.l}</div>
+    <div class="hero-sub">${sched.s}</div>
+  </div>`;
+
+  if (sched.t === 'rest') {
+    html += `<div class="rest-day-card"><h2>IZOMSZINTÉZIS NAP 😴</h2>
+      <p>Az izmaid <strong>most nőnek</strong> – nem edzés közben!<br>Koppints a feladatokra ahogy végzel velük.</p>
+      <div style="margin-top:12px">`;
+    REST_TASKS.forEach(t => {
+      const done = s[t.id];
+      html += `<div class="rest-task" onclick="toggle('${tk}','${t.id}')">
+        <div class="check" style="${done?'background:var(--green);border-color:var(--green);color:#fff':''}">${done?'✓':''}</div>
+        <span class="rest-icon">${t.icon}</span>
+        <span class="rest-task-name" style="${done?'text-decoration:line-through;opacity:0.5':''}">${t.n}</span>
+      </div>`;
+    });
+    html += `</div></div>`;
+  } else {
+    const exs = getExs(sched.t);
+    const allDone = exs.every(e => s[e.id]);
+    const doneCount = exs.filter(e => s[e.id]).length;
+
+    html += `<div class="sec-title">Gyakorlatok (${doneCount}/${exs.length} kész)</div>`;
+    exs.forEach(e => {
+      const done = s[e.id];
+      html += `<div class="ex-card ${done?'done':''}" onclick="toggle('${tk}','${e.id}')">
+        <div class="ex-card-inner">
+          <div class="check">${done?'✓':''}</div>
+          <div class="ex-body">
+            <div class="ex-name">${e.n}</div>
+            <div class="ex-meta">${e.d} · <span style="color:var(--gray)">${e.t}</span></div>
+            ${e.tip?`<div class="ex-tip">💡 ${e.tip}</div>`:''}
+          </div>
+          <button class="timer-btn" onclick="event.stopPropagation();openTimer('${e.n}',${e.rest})">${e.rest}s ⏱</button>
+        </div>
+      </div>`;
+    });
+
+    if (!allDone) {
+      html += `<button class="beast-btn" onclick="markAll('${tk}', ${JSON.stringify(exs).replace(/'/g,'\\\'')})">⚡ Mind kész – Beast mode!</button>`;
+    } else {
+      html += `<div class="done-banner">
+        <div class="done-banner-big">💪 MAI EDZÉS KÉSZ!</div>
+        <div class="done-banner-sub">Egyél fehérjét, igyál vizet, aludj jól! Holnap folytatjuk.</div>
+      </div>`;
+    }
+  }
+
+  el.innerHTML = html;
+}
+
+function renderCalendar() {
+  const el = document.getElementById('cal-content');
+  const tk = todayKey();
+  const today = new Date(); today.setHours(0,0,0,0);
+  let html = `<div class="sec-title">Program naptár · máj 30 – jún 17</div>`;
+
+  SCHED.forEach((sched, i) => {
+    const date = new Date(sched.d + 'T12:00:00');
+    date.setHours(0,0,0,0);
+    const isPast = date < today;
+    const isToday = sched.d === tk;
+    const done = isDayDone(sched);
+    const isMissed = isPast && !done && !isToday;
+
+    let indClass = 'ind-upcoming';
+    if (done) indClass = 'ind-done';
+    else if (isToday) indClass = 'ind-today';
+    else if (isMissed) indClass = 'ind-missed';
+    else if (sched.t === 'rest') indClass = 'ind-rest';
+    else if (sched.t === 'finish') indClass = 'ind-finish';
+
+    let typeColor = '';
+    if (sched.t === 'push') typeColor = 'color:#5dade2';
+    else if (sched.t === 'pull') typeColor = 'color:#58d68d';
+    else if (sched.t === 'rest') typeColor = 'color:#f0a500';
+    else if (sched.t === 'finish') typeColor = 'color:var(--gold)';
+
+    html += `<div class="cal-item ${isToday?'today-cal':''} ${isMissed?'past-miss':''}">
+      <div class="cal-date"><div class="cal-day-num">${date.getDate()}</div><div class="cal-month">${HU_M[date.getMonth()]}</div></div>
+      <div class="cal-div"></div>
+      <div class="cal-info">
+        <div class="cal-type" style="${typeColor}">${sched.l}${isToday?' ← MA':''}</div>
+        <div class="cal-sub">${HU_DAYS[date.getDay()]} · ${done?'✓ Teljesítve':isMissed?'⚠ Kihagyott':isToday?'Folyamatban':'Közelgő'}</div>
+      </div>
+      <div class="cal-indicator ${indClass}"></div>
+    </div>`;
+  });
+  el.innerHTML = html;
+}
+
+function renderExercises() {
+  const el = document.getElementById('ex-content');
+  function rows(exs) {
+    return exs.map((e,i) => `<div class="exref-row">
+      <div class="exref-num">${i+1}</div>
+      <div class="exref-body">
+        <div class="rname">${e.n}</div>
+        <div class="rtarget">${e.t}</div>
+        <div class="rsets">${e.d}</div>
+        ${e.tip?`<div class="rtip">💡 ${e.tip}</div>`:''}
+      </div>
+    </div>`).join('');
+  }
+
+  el.innerHTML = `
+    <div class="exref-section">
+      <div class="exref-header push">🔵 PUSH NAP – Váll · Tricepsz · Mell · Core</div>${rows(PUSH)}
+    </div>
+    <div class="exref-section">
+      <div class="exref-header pull">🟢 PULL NAP – Bicepsz · Hát · Alkar · Core</div>${rows(PULL)}
+    </div>
+    <div class="exref-section">
+      <div class="exref-header rest-h">🟠 PIHENŐNAP – Aktív regeneráció</div>
+      ${REST_TASKS.map((t,i) => `<div class="exref-row"><div class="exref-num">${t.icon}</div><div class="exref-body"><div class="rname">${t.n}</div></div></div>`).join('')}
+    </div>
+    <div class="exref-section">
+      <div class="exref-header finish-h">🎯 FINISH FÁZIS – Jún 14–17</div>
+      <div class="exref-row"><div class="exref-num">1</div><div class="exref-body"><div class="rname">Só minimalizálás</div><div class="rtarget">Feldolgozott étel, só, szószok ki</div></div></div>
+      <div class="exref-row"><div class="exref-num">2</div><div class="exref-body"><div class="rname">Víz: 4 liter/nap</div><div class="rtarget">Öblíti a szövetek közötti vizet</div></div></div>
+      <div class="exref-row"><div class="exref-num">3</div><div class="exref-body"><div class="rname">Szénhidrát normál</div><div class="rtarget">Tölti az izmokat, nem a bőrt alá</div></div></div>
+      <div class="exref-row"><div class="exref-num">4</div><div class="exref-body"><div class="rname">Edzés folytatódik</div><div class="rtarget">Az izmokat feszesen kell tartani!</div></div></div>
+    </div>`;
+}
+
+// ===== NAVIGATION =====
+function showScreen(name) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  ['nav-today','nav-calendar','nav-exercises','bot-today','bot-calendar','bot-exercises'].forEach(id => {
+    const el = document.getElementById(id); if(el) el.classList.remove('active');
+  });
+  document.getElementById('screen-' + name).classList.add('active');
+  document.getElementById('nav-' + name).classList.add('active');
+  document.getElementById('bot-' + name).classList.add('active');
+}
+
+// ===== TIMER =====
+let timerInterval = null;
+let timerTotal = 60;
+let timerLeft = 60;
+const CIRC = 2 * Math.PI * 90; // 565.5
+
+function openTimer(exName, secs) {
+  timerTotal = secs || 60;
+  timerLeft = timerTotal;
+  document.getElementById('timer-ex-name').textContent = exName + ' – Pihenő';
+  document.getElementById('timer-overlay').classList.add('show');
+  // highlight active preset
+  document.querySelectorAll('.preset-btn').forEach(b => {
+    b.classList.remove('active-preset');
+    if (parseInt(b.textContent) === secs || (b.textContent === '2 perc' && secs === 120)) b.classList.add('active-preset');
+  });
+  updateTimerDisplay();
+  startTimer();
+}
+
+function setTimer(secs) {
+  clearInterval(timerInterval);
+  timerTotal = secs;
+  timerLeft = secs;
+  document.querySelectorAll('.preset-btn').forEach(b => b.classList.remove('active-preset'));
+  event.target.classList.add('active-preset');
+  updateTimerDisplay();
+  startTimer();
+}
+
+function startTimer() {
+  clearInterval(timerInterval);
+  timerInterval = setInterval(() => {
+    timerLeft--;
+    updateTimerDisplay();
+    if (timerLeft <= 0) {
+      clearInterval(timerInterval);
+      timerDone();
+    }
+  }, 1000);
+}
+
+function updateTimerDisplay() {
+  document.getElementById('timer-display').textContent = timerLeft;
+  const pct = timerLeft / timerTotal;
+  const offset = CIRC * (1 - pct);
+  const ring = document.getElementById('timer-ring');
+  ring.style.strokeDashoffset = offset;
+  if (timerLeft <= 10) ring.style.stroke = '#e74c3c';
+  else if (timerLeft <= 20) ring.style.stroke = '#e67e22';
+  else ring.style.stroke = 'var(--gold)';
+}
+
+function timerDone() {
+  document.getElementById('timer-ring').style.stroke = '#27ae60';
+  document.getElementById('timer-display').textContent = '✓';
+  showToast('⏱ Pihenő kész! Következő sor!', true);
+  setTimeout(() => closeTimer(), 1500);
+}
+
+function skipTimer() {
+  clearInterval(timerInterval);
+  closeTimer();
+}
+
+function closeTimer() {
+  clearInterval(timerInterval);
+  document.getElementById('timer-overlay').classList.remove('show');
+  timerLeft = timerTotal;
+  updateTimerDisplay();
+}
+
+// ===== TOAST =====
+let toastT;
+function showToast(msg, gold) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = 'toast' + (gold ? ' gold' : '') + ' show';
+  clearTimeout(toastT);
+  toastT = setTimeout(() => t.classList.remove('show'), 2200);
+}
+
+// ===== INIT =====
+initState();
+</script>
+
+<div id="install-banner" style="display:none;position:fixed;top:0;left:0;right:0;background:#111820;border-bottom:1px solid rgba(240,192,64,0.4);padding:12px 16px;z-index:999;display:none;align-items:center;gap:12px">
+  <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+CiAgPHJlY3Qgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHJ4PSIxMDAiIGZpbGw9IiMwYTBmMTQiLz4KICA8cmVjdCB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgcng9IjEwMCIgZmlsbD0idXJsKCNiZykiLz4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iYmciIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMGQxYjJhIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6IzBhMGYxNCIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZ29sZCIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiNmZmZmZmYiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdHlsZT0ic3RvcC1jb2xvcjojZjBjMDQwIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KICA8IS0tIDggbnVtYmVyIC0tPgogIDx0ZXh0IHg9IjI1NiIgeT0iMzIwIiBmb250LWZhbWlseT0iQXJpYWwgQmxhY2ssIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzIwIiBmb250LXdlaWdodD0iOTAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ1cmwoI2dvbGQpIj44PC90ZXh0PgogIDwhLS0gbGlnaHRuaW5nIGJvbHQgb3ZlcmxheSAtLT4KICA8cG9seWdvbiBwb2ludHM9IjMwMCw4MCAyNDAsMjYwIDI4MCwyNjAgMjEyLDQzMCAzNDAsMjIwIDI5NSwyMjAgMzYwLDgwIiBmaWxsPSIjZjBjMDQwIiBvcGFjaXR5PSIwLjE1Ii8+Cjwvc3ZnPg==" style="width:36px;height:36px;border-radius:8px">
+  <div style="flex:1">
+    <div style="font-size:0.85rem;font-weight:700;color:#f0f4f8">Telepítsd az appot!</div>
+    <div style="font-size:0.7rem;color:#5a7a99">Ikon a kezdőképernyőre → valódi app élmény</div>
+  </div>
+  <button id="install-btn" style="background:rgba(240,192,64,0.15);border:1px solid rgba(240,192,64,0.4);color:#f0c040;border-radius:8px;padding:7px 14px;font-family:DM Sans,sans-serif;font-size:0.78rem;font-weight:700;cursor:pointer">Telepít</button>
+  <button onclick="document.getElementById('install-banner').style.display='none'" style="background:none;border:none;color:#5a7a99;font-size:1.2rem;cursor:pointer;padding:4px">✕</button>
+</div>
+
+<script>
+let deferredPrompt;
+const banner = document.getElementById('install-banner');
+
+window.addEventListener('beforeinstallprompt', e => {
+  e.preventDefault();
+  deferredPrompt = e;
+  banner.style.display = 'flex';
+});
+
+document.getElementById('install-btn').addEventListener('click', async () => {
+  if (!deferredPrompt) return;
+  deferredPrompt.prompt();
+  const { outcome } = await deferredPrompt.userChoice;
+  if (outcome === 'accepted') {
+    banner.style.display = 'none';
+    showToast('✓ App telepítve! Keresd a kezdőképernyőn 🏖️', true);
+  }
+  deferredPrompt = null;
+});
+
+window.addEventListener('appinstalled', () => {
+  banner.style.display = 'none';
+});
+
+// Service worker for offline use
+if ('serviceWorker' in navigator) {
+  const swCode = `
+    const CACHE = '8pack-v1';
+    self.addEventListener('install', e => {
+      e.waitUntil(caches.open(CACHE).then(c => c.addAll(['/'])));
+      self.skipWaiting();
+    });
+    self.addEventListener('fetch', e => {
+      e.respondWith(caches.match(e.request).then(r => r || fetch(e.request)));
+    });
+  `;
+  const swBlob = new Blob([swCode], {type: 'application/javascript'});
+  const swUrl = URL.createObjectURL(swBlob);
+  navigator.serviceWorker.register(swUrl).catch(() => {});
+}
+</script>
+</body>
+</html>
